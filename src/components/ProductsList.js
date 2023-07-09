@@ -4,11 +4,11 @@ import ShopItem from './ShopItem';
 const ProductsList = ({ products, onProductClicked }) => {
   return (
     <>
-      {products.map((product) => (
+    {products.map((product) => (
         <ShopItem
-          key={product.id}
-          product={product}
-          onProductClicked={onProductClicked}
+            key={product.id}
+            product={product}
+            onProductClicked={onProductClicked}
         />
       ))}
     </>

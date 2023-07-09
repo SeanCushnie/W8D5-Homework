@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ShopItem = ({ product, onProductClicked }) => {
+  const [basketItems, setBasketItems] = useState([]);
+  const [basketTotal, setBasketTotal] = useState(0);
+
   const handleClick = () => {
     onProductClicked(product);
+    setBasketItems([...basketItems, product.name]);
+    setBasketTotal(basketTotal + product.price);
   };
 
   return (
@@ -11,7 +16,7 @@ const ShopItem = ({ product, onProductClicked }) => {
       <p><strong>Price: </strong>£{product.price}</p>
       <p><strong>Category: </strong>{product.category}</p>
       <button onClick={handleClick}>Add to Cart</button>
-      <hr></hr>
+      <hr />
     </div>
   );
 };
