@@ -15,6 +15,7 @@ const ShopItem = ({ product, onProductClicked }) => {
       <h3>{product.title}</h3>
       <p><strong>Price: </strong>£{product.price}</p>
       <p><strong>Category: </strong>{product.category}</p>
+      <p> {product.image} </p>
       <button onClick={handleClick}>Add to Cart</button>
       <hr />
     </div>
